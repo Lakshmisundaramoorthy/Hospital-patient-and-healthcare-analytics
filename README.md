@@ -2,74 +2,55 @@
 End-to-end healthcare analytics project analyzing 13K+ hospital admission records using Python, SQL, Machine Learning and Power BI. Includes data cleaning, exploratory analysis, hospital KPI analysis, financial and department insights, 30-day readmission risk prediction using Logistic Regression, and an interactive Power BI dashboard.
 🏥 Hospital Patient & Healthcare Analytics
 
-An end-to-end healthcare analytics project analyzing 13,266 hospital admission records across two years (January 2024 – December 2025). The project covers data generation, data quality checks, exploratory data analysis, SQL-based business analysis, a 30-day readmission risk prediction model, and an interactive Power BI dashboard.
+An end-to-end healthcare analytics project analyzing 13,266 hospital admission records across 2024–2025 using Python, SQL, Machine Learning, and Power BI.
 
-The objective is to transform hospital admission data into actionable insights around patient demographics, department performance, financial trends, insurance patterns, admission characteristics, and readmission risk.
+The project covers data quality checks, exploratory data analysis, hospital KPI analysis, SQL business analysis, financial and department insights, 30-day readmission risk prediction, and an interactive Power BI dashboard.
 
-📌 Project Overview
-Goal
+Note: This project uses a synthetically generated healthcare dataset for educational and portfolio purposes. No real patient data is used.
 
-Analyze hospital admission data to understand:
+🎯 Project Objective
+
+The goal is to transform hospital admission data into actionable insights around:
 
 Patient demographics and admission patterns
 Department performance
-Hospital revenue and billing trends
-Insurance and admission-type patterns
+Hospital revenue and billing
+Insurance and admission types
 Length of stay
 Patient satisfaction
 30-day readmission patterns
-Factors associated with readmission risk
-
-In addition, a Logistic Regression model was developed to predict the probability of a patient being readmitted within 30 days.
-
+Readmission risk prediction
 📊 Dataset
+Details	Value
+Admission Records	13,266
+Period	Jan 2024 – Dec 2025
+Unique Patients	8,436
+Number of Fields	14
 
-The dataset contains 13,266 hospital admission records covering:
+Key fields include:
 
-January 2024 – December 2025
+Admission ID · Admission Date · Department · Diagnosis · Age · Gender · Insurance Type · Admission Type · Length of Stay · Billing Amount · Discharge Status · 30-Day Readmission · Patient Satisfaction
 
-The dataset contains 14 fields, including:
-
-Department
-Diagnosis
-Age
-Gender
-Insurance Type
-Admission Type
-Length of Stay
-Billing Amount
-Discharge Status
-30-Day Readmission Flag
-Patient Satisfaction
-
-The dataset is synthetically generated for portfolio and learning purposes, with realistic variations in hospital admissions, seasonality, financial patterns, and readmission outcomes.
-
-Note: No real patient data is used in this project.
-
-🎯 Project Objectives
-Perform data loading and data quality checks
-Identify and handle missing values and duplicate records
-Explore patient demographics and admission patterns
-Calculate important hospital KPIs
-Analyze department-level performance
-Analyze financial and billing patterns
-Analyze insurance and admission types
-Examine patient satisfaction and length-of-stay patterns
-Analyze 30-day readmission patterns
-Build a machine learning model to predict readmission risk
-Create an interactive Power BI dashboard
-Generate business-oriented healthcare insights and recommendations
 🛠️ Tools & Technologies
-Programming & Analysis
+
 Python
+
 Pandas
 NumPy
 Matplotlib
 Seaborn
-Database & SQL
-SQLite
+
 SQL
+
+SQLite
+Aggregations
+CASE WHEN
+CTEs
+Window Functions
+RANK()
+
 Machine Learning
+
 Scikit-learn
 Logistic Regression
 One-Hot Encoding
@@ -77,66 +58,52 @@ StandardScaler
 Train-Test Split
 ROC-AUC
 Classification Report
-Visualization & Dashboard
-Power BI
+
+Visualization
+
+Microsoft Power BI
 🔄 Project Workflow
 Hospital Admission Data
-          ↓
+        ↓
 Data Loading
-          ↓
+        ↓
 Data Quality Checks
-          ↓
+        ↓
 Data Cleaning & Preparation
-          ↓
+        ↓
 Exploratory Data Analysis
-          ↓
+        ↓
 Hospital KPI Analysis
-          ↓
+        ↓
 SQL Business Analysis
-          ↓
+        ↓
 Machine Learning
-          ↓
+        ↓
 30-Day Readmission Prediction
-          ↓
+        ↓
 Power BI Dashboard
-          ↓
+        ↓
 Insights & Recommendations
-🔍 1. Data Loading & Data Quality Checks
+🔍 1. Data Quality & Exploratory Analysis
 
-The project begins by loading the hospital admission dataset using Python and examining its structure.
+Python was used for:
 
-Data quality checks included:
-Dataset shape and structure
-Column names and data types
+Dataset structure and data-type checks
 Missing-value analysis
-Duplicate record checks
-Basic statistical analysis
+Duplicate-record checks
+Statistical analysis
 Categorical-value inspection
-Numerical-value distribution checks
-
-The data was then prepared for exploratory analysis and machine learning.
-
-📈 2. Exploratory Data Analysis
-
-Python was used to explore patterns and relationships across the hospital data.
-
-Areas analyzed:
-Patient age distribution
-Gender distribution
-Department-wise admissions
-Insurance type distribution
-Admission types
-Diagnosis patterns
-Length of stay
-Billing amount
-Patient satisfaction
-Discharge status
-30-day readmission patterns
-Monthly and seasonal admission trends
-🏥 3. Hospital KPI Analysis
-
-Key hospital performance indicators were calculated to provide an overall view of hospital operations.
-
+Numerical distribution analysis
+Patient demographic analysis
+Department analysis
+Insurance analysis
+Admission-type analysis
+Length-of-stay analysis
+Billing analysis
+Patient satisfaction analysis
+Readmission analysis
+Monthly and seasonal trend analysis
+🏥 2. Hospital KPI Overview
 KPI	Value
 Total Admissions	13,266
 Unique Patients	8,436
@@ -147,11 +114,10 @@ Average Patient Satisfaction	3.76 / 5
 
 These KPIs provide a high-level view of hospital activity, financial performance, patient outcomes, and operational trends.
 
-🗄️ 4. SQL Analysis
+🗄️ 3. SQL Business Analysis
 
-SQL was used to answer business-oriented questions from the hospital dataset.
+SQL was used to answer business-oriented healthcare questions including:
 
-SQL analysis includes:
 Overall admission and revenue KPIs
 Monthly admission trends
 Monthly revenue trends
@@ -159,40 +125,28 @@ Department performance
 Department-wise readmission rates
 Age-band analysis
 Insurance-type analysis
-Discharge status analysis
-High-cost admission analysis
-Revenue growth analysis
-Ranking departments based on performance
+Discharge-status analysis
+High-cost admissions
+Revenue growth
+Department ranking
 
-SQL techniques used include:
+SQL techniques include:
 
-SELECT
-WHERE
-GROUP BY
-ORDER BY
-Aggregate functions
-CASE WHEN
-Common Table Expressions (CTEs)
-Window functions
-RANK() OVER()
-SUM() OVER()
+SELECT · WHERE · GROUP BY · ORDER BY · Aggregate Functions · CASE WHEN · CTEs · Window Functions · RANK() OVER()
 
 SQL queries are available in:
 
 sql/analysis_queries.sql
-🤖 5. Machine Learning — 30-Day Readmission Risk Prediction
 
-A Logistic Regression classification model was developed to predict whether a patient would be readmitted within 30 days.
+🤖 4. Machine Learning — 30-Day Readmission Risk
+
+A Logistic Regression classification model was developed to predict whether a patient would experience a readmission within 30 days.
 
 Target Variable
+
 is_readmission_30d
 
-The target represents whether the patient experienced a readmission within 30 days.
-
-Features Used
-
-The model uses:
-
+Features
 Age
 Length of Stay
 Billing Amount
@@ -200,92 +154,67 @@ Department
 Insurance Type
 Admission Type
 Gender
-Data Preprocessing
+Data Preparation
 
-Categorical variables were converted into numerical features using One-Hot Encoding.
+Categorical variables were converted into numerical variables using One-Hot Encoding.
 
-Numerical features were standardized using StandardScaler.
+Numerical variables were standardized using StandardScaler.
 
-The dataset was divided into:
+The dataset was split using:
 
-75% Training Data
-25% Testing Data
+75% Training
+25% Testing
+Stratified sampling
+class_weight='balanced'
+Model Performance
 
-Stratified sampling was used to maintain the class distribution between training and testing datasets.
+ROC-AUC: 0.81
 
-Because readmissions represent a smaller proportion of the dataset, class_weight='balanced' was used to help address class imbalance.
+The model demonstrates good discrimination between patients with and without a 30-day readmission in the held-out test dataset.
 
-Model
+The model is intended as an analytical risk-screening exercise, not as a clinical decision-making system.
 
-Logistic Regression — Scikit-learn
-
-The model was selected because its coefficients are relatively interpretable and can help understand how different features are associated with predicted readmission risk.
-
-📊 Model Performance
-
-The model was evaluated on the held-out test dataset.
-
-ROC-AUC
-
-0.81
-
-Additional evaluation metrics include:
-
-Classification Report
-Precision
-Recall
-F1-score
-ROC Curve
 ROC Curve
 
 
 
 
-The ROC-AUC score of 0.81 indicates good discrimination between patients with and without a 30-day readmission in the test dataset.
+📊 5. Power BI Dashboard
 
-This model is intended as an analytical risk-screening exercise for the project and should not be interpreted as a clinical decision-making system.
-
-📊 6. Power BI Dashboard
-
-An interactive Power BI dashboard was developed to provide a visual overview of hospital performance.
-
-The dashboard contains four main pages:
+An interactive Power BI dashboard was created with four main analytical pages.
 
 🏥 Executive Overview
 
-Provides a high-level view of hospital KPIs, admissions, revenue, readmission rate and overall performance.
+High-level hospital KPIs, admissions, revenue, readmission rate, and overall performance.
 
 
 
 
 👤 Patient Analysis
 
-Provides insights into patient demographics, admission patterns, age groups, gender and readmission trends.
+Patient demographics, age groups, gender, admission patterns, and readmission trends.
 
 
 
 
 💰 Financial Analysis
 
-Analyzes hospital revenue, billing amounts, insurance patterns and financial trends.
+Revenue, billing amounts, insurance patterns, and financial trends.
 
 
 
 
 🏢 Department Performance
 
-Compares departments based on admissions, revenue, length of stay and readmission-related metrics.
+Department-level admissions, revenue, length of stay, and readmission metrics.
 
 
 
 
-💡 7. Key Insights
-
-The analysis identified several important patterns:
-
+💡 6. Key Insights
 1. Seasonal Admission Trends
 
-Hospital admissions and revenue show noticeable seasonal patterns, with higher activity during winter and monsoon periods.
+Admissions and revenue show noticeable seasonal patterns, with higher activity during winter and monsoon periods.
 
 2. Department Performance
 
@@ -293,9 +222,7 @@ Oncology and Orthopedics generate higher revenue per admission, while General Me
 
 3. Readmission Patterns
 
-Readmission rates vary across departments. Pulmonology and General Medicine show relatively higher readmission rates in the analyzed dataset.
-
-These differences can be investigated further to understand potential operational or discharge-related factors.
+Readmission rates vary across departments, with Pulmonology and General Medicine showing relatively higher rates in this dataset.
 
 4. Readmission Risk
 
@@ -303,39 +230,28 @@ The Logistic Regression model achieved a ROC-AUC of 0.81 using routinely availab
 
 5. Patient Satisfaction
 
-Patient satisfaction tends to be lower among patients with longer hospital stays, particularly for stays exceeding approximately 10 days.
+Patient satisfaction tends to decrease among patients with longer hospital stays, particularly for stays exceeding approximately 10 days.
 
-These findings are based on the synthetic dataset created for this project and should not be interpreted as conclusions about real-world hospitals.
+These findings are based on the synthetic dataset and should not be interpreted as conclusions about real-world hospitals.
 
-📌 8. Business Recommendations
-
-Based on the analysis:
-
-Monitor departments with higher patient volumes to support resource planning.
-Investigate departments with higher readmission rates to identify potential areas for further analysis.
-Monitor high-cost admissions to understand hospital billing and cost drivers.
-Track length-of-stay patterns to identify potential operational improvement opportunities.
-Monitor patient satisfaction across different length-of-stay groups.
-Use readmission-risk predictions as an analytical screening mechanism for identifying patients who may require further review.
-📁 9. Project Structure
-hospital-patient-healthcare-analytics/
+📌 7. Business Recommendations
+Monitor high-volume departments for resource planning.
+Investigate departments with higher readmission rates.
+Monitor high-cost admissions to identify billing and cost drivers.
+Analyze length-of-stay patterns for operational improvement.
+Track patient satisfaction across length-of-stay groups.
+Use readmission-risk predictions as an analytical screening mechanism for further review.
+📁 8. Project Structure
+Hospital-patient-and-healthcare-analytics/
 │
 ├── data/
-│   ├── hospital_admissions_data.csv
-│   └── generate_data.py
-│
-├── sql/
-│   ├── hospital_analytics.db
-│   └── analysis_queries.sql
+│   └── hospital_admissions_data.csv
 │
 ├── notebooks/
-│   ├── hospital_analytics.ipynb
-│   └── run_analysis.py
+│   └── hospital_analytics.ipynb
 │
-├── python/
-│   ├── 01_data_loading_quality_checks.py
-│   ├── 02_eda_analysis.py
-│   └── 03_readmission_prediction.py
+├── sql/
+│   └── analysis_queries.sql
 │
 ├── powerbi/
 │   └── Hospital_Healthcare_Analytics.pbix
@@ -350,41 +266,36 @@ hospital-patient-healthcare-analytics/
 │   └── readmission_model_roc.png
 │
 ├── requirements.txt
+├── LICENSE
+├── .gitignore
 └── README.md
-⚙️ 10. How to Run the Project
-Python Analysis
+⚙️ 9. How to Run
+Python
 
 Install the required libraries:
 
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+pip install -r requirements.txt
 
-Run the notebook:
+Open the notebook:
 
 jupyter notebook notebooks/hospital_analytics.ipynb
-SQL Analysis
+SQL
 
-The SQL database and queries are available in:
-
-sql/
-
-The main SQL query file is:
+The SQL queries are available in:
 
 sql/analysis_queries.sql
 
 The project uses SQLite for database analysis.
 
-Power BI Dashboard
+Power BI
 
-Open:
+Download the .pbix file from:
 
 powerbi/Hospital_Healthcare_Analytics.pbix
 
-using Microsoft Power BI Desktop.
+Open it using Microsoft Power BI Desktop.
 
-📦 11. Requirements
-
-The main Python dependencies are:
-
+📦 10. Requirements
 pandas
 numpy
 matplotlib
@@ -392,43 +303,34 @@ seaborn
 scikit-learn
 jupyter
 
-Install them using:
+Install with:
 
 pip install -r requirements.txt
-🚀 12. Future Improvements
-
-Potential future improvements include:
-
-Test the approach on a public healthcare dataset
-Compare Logistic Regression with tree-based models such as Random Forest or XGBoost
-Perform hyperparameter tuning
-Add model explainability techniques
-Develop a length-of-stay prediction model
-Add additional hospital operational KPIs
-Deploy the dashboard as a web application
-Monitor model performance over time
-💼 13. Resume Project Description
+🚀 11. Future Improvements
+Test the approach using a public healthcare dataset.
+Compare Logistic Regression with Random Forest or XGBoost.
+Perform hyperparameter tuning.
+Add model explainability techniques.
+Develop a length-of-stay prediction model.
+Add additional hospital operational KPIs.
+Deploy the dashboard as a web application.
+💼 Resume Project Description
 
 Hospital Patient & Healthcare Analytics | Python, SQL, Machine Learning, Power BI
 
-Built an end-to-end healthcare analytics project using SQL and Python on 13K+ hospital admission records; developed a Logistic Regression model for 30-day readmission risk with a ROC-AUC of 0.81, and built an interactive Power BI dashboard highlighting department performance, financial trends and seasonal admission patterns.
+Built an end-to-end healthcare analytics project on 13K+ hospital admission records using Python and SQL; developed a Logistic Regression model for 30-day readmission risk with ROC-AUC 0.81, and built an interactive Power BI dashboard highlighting hospital KPIs, department performance, financial trends, and seasonal admission patterns.
 
 ⭐ Skills Demonstrated
 
-Data Analytics:
-Data Cleaning · Exploratory Data Analysis · KPI Development · Business Analysis
+Data Analytics: Data Cleaning · EDA · KPI Development · Business Analysis
 
-Programming:
-Python · Pandas · NumPy · Matplotlib · Seaborn
+Programming: Python · Pandas · NumPy · Matplotlib · Seaborn
 
-Database:
-SQL · SQLite · Aggregations · CTEs · Window Functions
+Database: SQL · SQLite · CTEs · Window Functions · Aggregations
 
-Machine Learning:
-Logistic Regression · Feature Encoding · Feature Scaling · Classification · ROC-AUC
+Machine Learning: Logistic Regression · One-Hot Encoding · StandardScaler · Classification · ROC-AUC
 
-Visualization:
-Power BI · Data Visualization · Interactive Dashboards
+Visualization: Power BI · Interactive Dashboards
 
 📌 Disclaimer
 
